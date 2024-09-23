@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+$primary-backgroun:rgba(61, 60, 60, 0);
+$primary-text-color:rgba(255, 255, 255, 0.822);
+$secundary-text-color: white;
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/fondo2.jpg');
+    background-size: cover; 
+    
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+
+.column-1 {
+    flex: 1; 
+    background-color: rgba(61, 60, 60, 0.4);
+    height: 100%;
+
+    .container {
+        display: flex;
+        flex-direction: column; 
+        height: 100vh; 
+    }
+    
+    .row-1 {
+        background-color: rgba(61, 60, 60, 0);
+        height: 100px;
+        width: 100%;
+        padding-top: 20px;
+
+        .logo{
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            padding-left: 20px; 
+        }
+
+    }
+    
+    .row-2 {
+        font-family: 'Montserrat', sans-serif; /* Aplica la fuente Roboto a elementos con la clase .custom-text */
+        font-size: 50px;
+        color: rgba(17, 17, 17, 0.68);
+        background-color: rgba(61, 60, 60, 0);   
+        padding-left: 15px; 
+        margin-bottom: 20%;
+    }
+    
+    .row-3 {
+        width: 40%;
+        background-color: rgba(0, 0, 0, 0.219);
+        margin-bottom: 35%;
+        margin-left: 50%;
+        padding: 20px;
+        border-radius: 10px;
+
+        p{
+            text-align: left;
+            font-family: 'Montserrat', sans-serif; /* Aplica la fuente Roboto a elementos con la clase .custom-text */
+            font-size: 1.25rem;
+            color: $secundary-text-color;
+        }
+
+        button {
+            background: transparent; /* Elimina el fondo */
+            border: none; /* Elimina el borde */
+            cursor: pointer; /* Cambia el cursor a mano al pasar el ratón */
+        }
+    }
+
+}
+
+.column-2 {
+    flex: 2;
+    $primary-backgroun: rgba(61, 60, 60, 0);
+    height: 100%;
+
+    .container {
+        display: flex;
+        flex-direction: column; 
+        height: 100vh; 
+    }
+    
+    .fila {
+        background-color:  $primary-backgroun;
+    }
+    
+    .fila-1 {
+   
+        height: 150px;
+        padding: 20px;
+
+        h1{
+            padding: 20px;
+            width: 50%;
+            margin-left: 25%;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif; 
+            color: $secundary-text-color;
+            font-size: 60px;
+        }
+
+    }
+
+    .fila-2 {
+  
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+
+        .contenedor{
+
+            display: flex; 
+            flex:1;
+            align-items: center;  
+            justify-content: center; 
+
+            .fecha{
+                display: flex;        
+                align-items: center; 
+                justify-content: center; 
+                flex-direction: column; 
+                margin: 0;           
+                background-color: rgba(0, 0, 0, 0.3);
+                width: 70%;
+                height: 100%;
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;        
+                font-size: 20px;
+                color: $primary-text-color;
+                border-radius: 20px;
+                padding: 20px;
+
+                h2{
+                    color: $secundary-text-color;
+                }
+
+            }
+
+            .temperatura{
+
+                @extend .fecha;
+                
+            }
+
+        }
+
+    }
+
+    .fila-3 {
+        
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+
+        .contenedor{
+
+            display: flex; 
+            flex:1;
+            align-items: center;  
+            justify-content: center; 
+
+            .ciudad{
+
+
+                display: flex;        
+                align-items: center; 
+                justify-content: center; 
+                margin: 0;           
+                background-color: rgba(0, 0, 0, 0.3);
+                width: 70%;
+                height: 100%;
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;        
+                font-size: 20px;
+                color: $primary-text-color;
+                border-radius: 20px;
+            }
+
+            .clima{
+                @extend .ciudad;
+            }
+
+        }
+        
+
+    }
+    
+
+    .fila-4 {
+        margin-bottom: 5%;
+        .contenedor{
+
+            display: flex; 
+   
+ 
+
+            .coordenadas{
+
+
+                display: flex;        
+                align-items: center; 
+                justify-content: center; 
+                flex-direction: column; 
+                margin: 0;           
+                background-color: rgba(0, 0, 0, 0.3);
+                width: 35%;
+                height: 100%;
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;        
+                font-size: 20px;
+                color: $primary-text-color;
+                border-radius: 20px;
+                margin-left: 8%;
+            }
+
+        }
+
+    }
+
+
+
+}
+
+.ModalBackground {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+
+    .ModalContent {
+        background-color: white; // Fondo del contenido del modal
+        padding: 20px; // Espaciado interno
+        border-radius: 8px; // Bordes redondeados
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra
+        width: 400px; // Ancho del modal (ajusta según sea necesario)
+        max-width: 100%; // No exceder el ancho de la pantalla
+        border: 3px solid #0066ff;
+
+        
+
+        .buttonContent {
+           margin-bottom: 5%;
+           display: flex; // Centrar el contenido
+           justify-content: right;
+
+           button {
+            background: transparent; /* Elimina el fondo */
+            border: none; /* Elimina el borde */
+            cursor: pointer; /* Cambia el cursor a mano al pasar el ratón */
+        }
+
+        }
+
+    }
+
+}
+
+
+
+
